@@ -7,7 +7,6 @@ body {
 
 * {
   font-family: 'Inter', system-ui;
-	list-style: none;
 }
 
 .wrapper {
@@ -71,7 +70,6 @@ header {
   position: relative;
 	align-items: center;
 
-
   .clear {
     position: absolute;
     right: 0;
@@ -86,14 +84,7 @@ header {
     padding: 13px;
     font-size: 16px;
     width: 200px;
-		outline: none;
   }
-}
-
-.cart-count{
-font-style: normal;
-font-weight: 600;
-color: #5C5C5C;
 }
 
 .cartTotalBlock {
@@ -172,8 +163,8 @@ color: #5C5C5C;
   padding: 20px;
 
   .cartItemImg {
-    height: 70px;
-    width: 70px;
+    height: 90px;
+    width: 90px;
     background-size: contain;
     background-position: 0 -3px;
     background-repeat: no-repeat;
