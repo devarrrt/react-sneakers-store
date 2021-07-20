@@ -11,11 +11,12 @@ interface IHome {
 	searchValue: string,
 	changeSearch: ( e: React.FormEvent<HTMLInputElement>) => void,
 	clearSearchValue: ( ) => void 
+	onAddToFavorites: ( obj: ISneaker ) => void
  }
 
 
 
-const Home: React.FC<IHome> = ({ items, onAddSneakers, searchValue, changeSearch, clearSearchValue }) => {
+const Home: React.FC<IHome> = ({ items, onAddSneakers, searchValue, changeSearch, clearSearchValue, onAddToFavorites }) => {
 	return (
 		<div className="content p-40">
       <div className="d-flex align-center justify-between mb-40">
@@ -42,6 +43,7 @@ const Home: React.FC<IHome> = ({ items, onAddSneakers, searchValue, changeSearch
 			key={ item.id }  
 			{ ...item }  
 			onAddSneakers={ onAddSneakers } 
+			onAddToFavorites={ onAddToFavorites }
 			/>
 			))}
 			 </div> 
