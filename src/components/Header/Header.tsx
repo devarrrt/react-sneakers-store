@@ -2,11 +2,13 @@ import React from 'react'
 
 
 
-interface IHeader {}
+interface IHeader {
+	onOpenCart: () => void
+}
 
 
 
-const Header: React.FC<IHeader> = () => {
+const Header: React.FC<IHeader> = ({ onOpenCart }) => {
 	return (
 		<header className="d-flex justify-between align-center p-40">
 			<div className="d-flex align-center">
@@ -18,7 +20,7 @@ const Header: React.FC<IHeader> = () => {
 				</div>
 			</div>
 		<ul className="d-flex">
-			<li className="mr-30 cu-p">
+			<li className="mr-30 cu-p" onClick={ onOpenCart }>
 				<img width={18} height={18} src="images/Basket.svg" alt="Корзина" />
 				<span className="cart-count"> 1293  руб.</span>
 			</li>

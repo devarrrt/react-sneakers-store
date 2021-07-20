@@ -27,7 +27,7 @@
 		{
 			"id": 5,
 			"title": "Мужские Кроссовки Nike Blazer Mid Suede",
-			"price": 8999,
+			"price": 12450,
 			"imageUrl": "/images/sneakers5.jpg"
 		}, 
 				{
@@ -39,25 +39,25 @@
 		{
 			"id": 7,
 			"title": "Кроссовки Puma X Aka Boku Future Rider",
-			"price": 8999,
+			"price": 9400,
 			"imageUrl": "/images/sneakers7.jpg"
 		}, 
 				{
 			"id": 8,
 			"title": "Мужские Кроссовки Nike LeBron XVIII",
-			"price": 8999,
+			"price": 11200,
 			"imageUrl": "/images/sneakers8.jpg"
 		}, 
 		{
 			"id": 9,
 			"title": "Мужские Кроссовки Nike Kyrie Flytrap IV",
-			"price": 8999,
+			"price": 12300,
 			"imageUrl": "/images/sneakers9.jpg"
 		}, 
 		{
 			"id": 10,
 			"title": "Мужские Кроссовки Nike Blazer Mid Suede",
-			"price": 8999,
+			"price": 12999,
 			"imageUrl": "/images/sneakers10.jpg"
 		}
 	]

@@ -6,30 +6,46 @@ import { ISneaker } from './../App';
 
 
 interface IHome {
-	items: ISneaker[]
+	items: ISneaker[], 
+	onAddSneakers: ( newSneaker: ISneaker ) => void,
+	searchValue: string,
+	changeSearch: ( e: React.FormEvent<HTMLInputElement>) => void,
+	clearSearchValue: ( ) => void 
  }
 
-const Home: React.FC<IHome> = ({ items }) => {
+
+
+const Home: React.FC<IHome> = ({ items, onAddSneakers, searchValue, changeSearch, clearSearchValue }) => {
 	return (
 		<div className="content p-40">
       <div className="d-flex align-center justify-between mb-40">
-        <h1>Все кроссовки</h1>
+        <h1> { searchValue ? `Поиск по запросу: ${ searchValue }` : 'Все кроссовки' } </h1>
         <div className="search-block d-flex">
           <img src="/images/Search.png" alt="Search" />
-            <img
+          { searchValue ? (
+						  <img
               className="clear cu-p"
               src="/images/remove.png"
               alt="Clear"
-            />
-          <input  placeholder="Поиск..." />
+							onClick={ clearSearchValue }
+            />  
+					) : null }
+          <input  placeholder="Поиск..." 
+					value={ searchValue }
+					onChange={ changeSearch }
+					/>
         </div>
       </div>
       <div className="d-flex flex-wrap"> 
 			{ items.map( item => (
-			<Card { ...item } />
+			<Card 
+			key={ item.id }  
+			{ ...item }  
+			onAddSneakers={ onAddSneakers } 
+			/>
 			))}
-			 </div>
-    </div>
+			 </div> 
+    </div> 
 	)
 }
 
