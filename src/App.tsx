@@ -83,15 +83,19 @@ const App = (props: Props) => {
 
 
 	const onAddToFavorites = async (obj: ISneaker) => {
-			//@ts-ignore
-		if ( favorites.find(( item ) => item.id === obj.id )) { 
-			axios.delete( `https://60f45c223cb0870017a8a203.mockapi.io/favorite/${obj.id}` )
-			//@ts-ignore
-			setFavorites(prev => prev.filter(item => item.id !== obj.id))
-		} else {
-			const { data } = await axios.post('https://60f45c223cb0870017a8a203.mockapi.io/favorite', obj)
-			//@ts-ignore
-			setFavorites((prev) => [...prev, data])
+		try {
+	//@ts-ignore
+	if ( favorites.find(( item ) => item.id === obj.id )) { 
+		axios.delete( `https://60f45c223cb0870017a8a203.mockapi.io/favorite/${obj.id}` )
+		//@ts-ignorej
+		setFavorites(prev => prev.filter(item => item.id !== obj.id))
+	} else {
+		const { data } = await axios.post('https://60f45c223cb0870017a8a203.mockapi.io/favorite', obj)
+		//@ts-ignore
+		setFavorites((prev) => [...prev, data])
+	}
+		} catch (error) {
+			console.log( error )
 		}
 	}
 
@@ -101,7 +105,6 @@ const App = (props: Props) => {
 	}
 
 	return (
-		<div className="wrapper clear">
 			{ cartOpened ?
 				<Drawer
 					items={cartItems}
